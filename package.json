@@ -1,0 +1,16 @@
+{
+  "name": "lmt-api-doc",
+  "version": "1.0.0",
+  "bin": {
+    "lmt-api-doc": "./bin/www"
+  },
+  "dependencies": {
+    "apidoc": "^0.17.7",
+    "chokidar": "^3.0.2",
+    "commander": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lazyTai/watchfilechange-apidoc.git"
+  }
+}

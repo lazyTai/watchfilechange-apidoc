@@ -1,0 +1,9 @@
+.vscode
+./.vscode
+node_modules
+./node_modules
+test
+./test
+lmt-api-doc-1.0.0.tgz
+build
+./build

@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+var path = require('path');
+var cmd = require('commander');
+var createApidocs = require('../index');
+
+var argv = cmd
+  .option('-i, --input <input>', 'Input/source dirname.', collect, [])
+
+  .option('-o, --output <output>', 'Output dirname.', './doc/')
+
+
+  .parse(process.argv)
+  ;
+
+
+/**
+* Collect options into an array
+* @param {String} value
+* @param {String[]} acc
+* @returns {String[]}
+*/
+function collect (value, acc) {
+  acc.push(value);
+  return acc;
+}
+
+
+
+var logger = console.log.bind(this)
+
+var options = {
+  input: argv.input.length ? argv.input : ['./'],
+  output: argv.output,
+};
+
+logger({options})
+
+if (createApidocs(options) === false) {
+  process.exit(1);
+}
